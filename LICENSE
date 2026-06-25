@@ -1,0 +1,29 @@
+BridgerAndroidBallistics — Integration Partner License
+
+Copyright (c) 2026 Bridger. All rights reserved.
+
+This software (the "Library") is provided by Bridger to its integration partners
+solely for the purpose of integrating ballistic-profile transfer to the Bridger
+Android application and Bridger Watch, under and subject to the terms of the
+integration agreement between Bridger and the partner.
+
+Subject to that agreement, the partner is granted a non-exclusive,
+non-transferable license to incorporate the Library into the partner's own
+application(s) and to distribute it only as embedded within those applications in
+binary form. The partner may modify the Library as needed for its integration.
+
+The Library may not be redistributed as source, sublicensed, or used for any
+purpose other than integrating with Bridger, except as expressly permitted by the
+integration agreement.
+
+THE LIBRARY IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+LIBRARY OR THE USE OR OTHER DEALINGS IN THE LIBRARY.
+
+NOTE: This is a placeholder license reflecting a typical partner-integration
+arrangement. Replace it with the license your legal team approves before
+distribution — for example a standard MIT/Apache-2.0 license if you decide to
+release the library openly.

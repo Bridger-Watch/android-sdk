@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      Android 11+ package visibility. Without this, isInstalled()/open() cannot
+      see or resolve the Bridger app's bridgerwatch:// scheme. Merged into the
+      partner app's manifest automatically. (Android analog of iOS
+      LSApplicationQueriesSchemes.)
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="bridgerwatch" />
+        </intent>
+    </queries>
+
+    <application>
+        <!--
+          A uniquely-named FileProvider for the share-sheet path (Path 2). The
+          authority is namespaced per app (${applicationId}.bridgerballistics.fileprovider)
+          so it never collides with the partner app's own FileProvider.
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.bridgerballistics.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/bridger_ballistics_paths" />
+        </provider>
+    </application>
+</manifest>
