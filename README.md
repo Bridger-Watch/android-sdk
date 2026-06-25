@@ -1,4 +1,4 @@
-# Android-SDK
+# BridgerAndroidBallistics
 
 A drop-in Android (Kotlin) library for sending a ballistic profile from your app
 to the **Bridger Android app**, which forwards it to the **Bridger Watch**.

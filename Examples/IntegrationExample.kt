@@ -1,10 +1,10 @@
 //
-//  HornadyIntegrationExample.kt
+//  IntegrationExample.kt
 //  BridgerAndroidBallistics — REFERENCE ONLY
 //
 //  This file is NOT part of the library module and is NOT compiled by Gradle.
 //  It's a copy-paste reference showing how a partner Android app (using
-//  "Hornady" as a stand-in) would integrate BridgerAndroidBallistics. Drop the
+//  "Company" as a stand-in) would integrate BridgerAndroidBallistics. Drop the
 //  relevant pieces into your own app and adjust to your data model.
 //
 //  Prerequisite: add the library (see README.md). The required <queries> entry
@@ -26,14 +26,14 @@ import com.bridgerwatch.ballistics.model.Units
 import com.bridgerwatch.ballistics.support.BridgerError
 
 // 1. Your app's existing model (example).
-data class HornadyPoint(
+data class CompanyPoint(
     val rangeYards: Double,
     val dropInches: Double,
     val elevationMOA: Double,
     val windDriftInches: Double?,
 )
 
-data class HornadySolution(
+data class CompanySolution(
     val name: String,
     val caliber: String,
     val rifle: String,
@@ -41,11 +41,11 @@ data class HornadySolution(
     val bulletGrains: Double,
     val muzzleVelocityFPS: Double,
     val zeroYards: Int,
-    val points: List<HornadyPoint>,
+    val points: List<CompanyPoint>,
 )
 
 // 2. Map it to a BallisticProfile (do this once).
-fun HornadySolution.toBridgerProfile(): BallisticProfile {
+fun CompanySolution.toBridgerProfile(): BallisticProfile {
     val rows = points.map {
         BallisticRow(
             range = it.rangeYards,
@@ -70,7 +70,7 @@ fun HornadySolution.toBridgerProfile(): BallisticProfile {
         ),
         rifle = Rifle(caliber = caliber, name = rifle),
         bullet = Bullet(
-            manufacturer = "Hornady",
+            manufacturer = "Company",
             model = bulletModel,
             weightGrains = bulletGrains,
             muzzleVelocityFPS = muzzleVelocityFPS,
@@ -80,7 +80,7 @@ fun HornadySolution.toBridgerProfile(): BallisticProfile {
 }
 
 // 3. Send it.
-fun sendToBridger(context: Context, solution: HornadySolution) {
+fun sendToBridger(context: Context, solution: CompanySolution) {
     val profile = solution.toBridgerProfile()
 
     // Surface blocking problems in your own UI first (open() also validates).
